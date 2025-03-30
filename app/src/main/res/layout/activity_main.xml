@@ -47,6 +47,13 @@
             android:layout_marginEnd="32dp" />
 
         <ImageView
+            android:id="@+id/chatGpt"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/chatgpt_logo_green"
+            android:layout_marginEnd="32dp" />
+
+        <ImageView
             android:id="@+id/vehicleOption"
             android:layout_width="48dp"
             android:layout_height="48dp"

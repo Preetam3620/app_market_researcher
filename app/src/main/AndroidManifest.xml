@@ -26,7 +26,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ApiActivity" android:exported="false" />
+        <activity android:name=".ApiFragment" android:exported="false" />
         <activity android:name=".VehicleFragment" android:exported="false" />
         <activity android:name=".ChatGptFragment" android:exported="false" />
 

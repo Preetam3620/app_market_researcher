@@ -11,6 +11,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var apiOption: LinearLayout
     private lateinit var vehicleOption: ImageView
     private lateinit var chatGptOption: ImageView
+    private lateinit var chatGpt: ImageView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         apiOption = findViewById(R.id.apiOption)
         vehicleOption = findViewById(R.id.vehicleOption)
         chatGptOption = findViewById(R.id.chatGptOption)
+        chatGpt = findViewById(R.id.chatGpt)
 
         loadFragment(ApiFragment())
 
@@ -33,6 +36,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         chatGptOption.setOnClickListener {
+            setActiveMode("CHAT_GPT_OFFLINE")
+            loadFragment(ChatGptFragment())
+        }
+
+        chatGpt.setOnClickListener {
             setActiveMode("CHAT_GPT")
             loadFragment(ChatGptFragmentOffline())
         }
@@ -46,36 +54,36 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setActiveMode(mode: String) {
+        // Reset all backgrounds and elevation
+        apiOption.setBackgroundColor(0)
+        apiOption.elevation = 0f
+
+        vehicleOption.setBackgroundColor(0)
+        vehicleOption.elevation = 0f
+
+        chatGptOption.setBackgroundColor(0)
+        chatGptOption.elevation = 0f
+
+        chatGpt.setBackgroundColor(0)
+        chatGpt.elevation = 0f
+
+        // Apply active style to the selected one
         when (mode) {
             "API" -> {
                 apiOption.setBackgroundResource(android.R.color.white)
                 apiOption.elevation = 8f
-
-                vehicleOption.setBackgroundColor(0)
-                vehicleOption.elevation = 0f
-
-                chatGptOption.setBackgroundColor(0)
-                chatGptOption.elevation = 0f
             }
             "VEHICLE" -> {
                 vehicleOption.setBackgroundResource(android.R.color.white)
                 vehicleOption.elevation = 8f
-
-                apiOption.setBackgroundColor(0)
-                apiOption.elevation = 0f
-
-                chatGptOption.setBackgroundColor(0)
-                chatGptOption.elevation = 0f
             }
-            "CHAT_GPT" -> {
+            "CHAT_GPT_OFFLINE" -> {
                 chatGptOption.setBackgroundResource(android.R.color.white)
                 chatGptOption.elevation = 8f
-
-                apiOption.setBackgroundColor(0)
-                apiOption.elevation = 0f
-
-                vehicleOption.setBackgroundColor(0)
-                vehicleOption.elevation = 0f
+            }
+            "CHAT_GPT" -> {
+                chatGpt.setBackgroundResource(android.R.color.white)
+                chatGpt.elevation = 8f
             }
         }
     }
