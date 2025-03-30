@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
 
         chatGptOption.setOnClickListener {
             setActiveMode("CHAT_GPT")
-            loadFragment(ChatGptFragment())
+            loadFragment(ChatGptFragmentOffline())
         }
 
     }

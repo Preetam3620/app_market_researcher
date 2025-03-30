@@ -52,7 +52,7 @@ dependencies {
     // For networking (Retrofit)
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
-
+    implementation ("com.squareup.okhttp3:okhttp:4.12.0")
     // For plotting (MPAndroidChart)
     implementation(libs.mpandroidchart)
     implementation("org.tensorflow:tensorflow-lite:2.12.0") // or newer

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/promptEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter your prompt"
+        android:inputType="textMultiLine"
+        android:minHeight="100dp"
+        android:gravity="top"
+        android:padding="10dp"
+        android:background="@android:drawable/edit_text" />
+
+    <Button
+        android:id="@+id/sendPromptButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send Prompt"
+        android:layout_marginTop="12dp"/>
+
+    <TextView
+        android:id="@+id/responseTextView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="Response will appear here..."
+        android:textColor="#000"
+        android:padding="10dp"
+        android:layout_marginTop="12dp"
+        android:background="#EFEFEF"
+        android:scrollbars="vertical"
+        android:gravity="top"/>
+
+</LinearLayout>
