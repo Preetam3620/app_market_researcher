@@ -41,7 +41,7 @@ class ChatGptFragment : Fragment() {
         val client = OkHttpClient.Builder().addInterceptor { chain: Interceptor.Chain ->
             val request = chain.request().newBuilder().addHeader(
                 "Authorization",
-                "Bearer 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"            ).addHeader("OpenAI-Project", "proj_9eXCODLhjzsFAUMpm28nd4y2").build()
+                "Dummy"            ).addHeader("OpenAI-Project", "proj_9eXCODLhjzsFAUMpm28nd4y2").build()
             chain.proceed(request)
         }.build()
 
