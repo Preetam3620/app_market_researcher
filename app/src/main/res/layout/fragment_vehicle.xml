@@ -37,7 +37,7 @@
             android:id="@+id/btnAnalyze"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Analyze"
+            android:text="Call ML Model"
             android:enabled="false"
             android:backgroundTint="#4267B2"
             android:textColor="@android:color/white" />
