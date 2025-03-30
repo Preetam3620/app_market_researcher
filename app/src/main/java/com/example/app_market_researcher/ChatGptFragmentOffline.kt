@@ -24,8 +24,7 @@ class ChatGptFragmentOffline : Fragment() {
 
     private val huggingFaceUrl = "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.1"
     private val hfApiKey = "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"
-    private val ragServerUrl = "https://ebf5-35-245-94-4.ngrok-free.app/ask"
-
+    private val ragServerUrl = "https://94aa-34-139-17-8.ngrok-free.app/ask"
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
