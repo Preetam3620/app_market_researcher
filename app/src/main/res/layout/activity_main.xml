@@ -1,166 +1,55 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <RelativeLayout
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
-        <!-- Top section for indicators -->
+    <LinearLayout
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="16dp">
+
         <LinearLayout
-            android:id="@+id/indicatorContainer"
-            android:layout_width="match_parent"
+            android:id="@+id/apiOption"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:gravity="center"
+            android:layout_marginEnd="32dp"
+            android:background="@android:color/white"
+            android:elevation="4dp"
+            android:padding="8dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center">
-
-                <Button
-                    android:id="@+id/btnGDP"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="GDP"
-                    android:layout_marginEnd="8dp"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
-
-                <Button
-                    android:id="@+id/btnCO2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="CO2"
-                    android:backgroundTint="#4267B2"
-                    android:textColor="@android:color/white"/>
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/btnAgriLand"
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Agri. Land"
-                android:layout_gravity="center"
-                android:layout_marginTop="8dp"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
-        </LinearLayout>
-
-        <!-- WebView for chart -->
-        <WebView
-            android:id="@+id/webView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/indicatorContainer"
-            android:layout_above="@id/bottomNavigation"
-            android:layout_margin="16dp"/>
-
-        <!-- Vehicle Option Section for Audio File Selection - initially hidden -->
-        <LinearLayout
-            android:id="@+id/vehicleContainer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_below="@id/indicatorContainer"
-            android:layout_above="@id/bottomNavigation"
-            android:layout_margin="16dp"
-            android:visibility="gone">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Select Audio File"
-                android:textSize="18sp"
+                android:text="API"
                 android:textStyle="bold"
-                android:layout_marginBottom="16dp"/>
-
-            <Button
-                android:id="@+id/btnSelectFile"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Choose File"
-                android:layout_marginBottom="16dp"/>
-
-            <TextView
-                android:id="@+id/tvSelectedFileName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="No file selected"
-                android:textStyle="italic"
-                android:layout_marginBottom="24dp"/>
-
-            <Button
-                android:id="@+id/btnAnalyze"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Analyze"
-                android:enabled="false"
-                android:backgroundTint="#4267B2"
-                android:textColor="@android:color/white"/>
-
-            <TextView
-                android:id="@+id/tvAnalysisResult"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="#333333"
-                android:background="#F5F5F5"
-                android:minHeight="100dp"
-                android:gravity="center"/>
+                android:textSize="18sp" />
         </LinearLayout>
 
-        <!-- Bottom navigation -->
-        <LinearLayout
-            android:id="@+id/bottomNavigation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_alignParentBottom="true"
-            android:padding="16dp"
-            android:gravity="center_horizontal">
+        <ImageView
+            android:id="@+id/chatGptOption"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/chatgpt_logo"
+            android:layout_marginEnd="32dp" />
 
-            <LinearLayout
-                android:id="@+id/apiOption"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_marginEnd="32dp"
-                android:background="@android:color/white"
-                android:elevation="4dp"
-                android:padding="8dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="API"
-                    android:textStyle="bold"
-                    android:textSize="18sp"/>
-            </LinearLayout>
-
-            <ImageView
-                android:id="@+id/chatGptOption"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:src="@drawable/chatgpt_logo"
-                android:layout_marginEnd="32dp"/>
-
-            <ImageView
-                android:id="@+id/vehicleOption"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:src="@drawable/vehicle_icon"/>
-        </LinearLayout>
-
-    </RelativeLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/vehicleOption"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/vehicle_icon" />
+    </LinearLayout>
+</LinearLayout>
